@@ -8,6 +8,7 @@ import 'package:supa_chat/src/controllers/auth_controller.dart';
 import 'package:supa_chat/src/controllers/chat_controller.dart';
 import 'package:supa_chat/utils/extension.dart';
 import 'package:supa_chat/views/call_page.dart';
+import 'package:timeago/timeago.dart' as timeago;
 
 class ChatScreen extends ConsumerStatefulWidget {
   final int groupId;
@@ -253,8 +254,7 @@ class ChatBubble extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 5.0),
-              Text(
-                '10/1/1020',
+              Text(timeago.format(dateTime),
                 style: TextStyle(
                   fontSize: 12.0,
                   color: isSender ? Colors.white70 : Colors.black54,
